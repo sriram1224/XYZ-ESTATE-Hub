@@ -6,6 +6,8 @@ import {
   Flame,
   Building,
 } from "lucide-react";
+import { motion } from "framer-motion";
+import { staggerContainer, cardVariants, textVariant, fadeInUp } from "../animations";
 
 const partners = [
   { name: "ApartmentList", icon: Building2 },
@@ -18,38 +20,54 @@ const partners = [
 
 const TrustedPartnersSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/10 border-t border-gray-100 overflow-hidden">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/10 border-t border-gray-100 overflow-hidden"
+    >
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div 
+          variants={textVariant(0.2)}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl font-bold mb-4 text-foreground">
             Trusted by Leading Rental Platforms
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Our partners help millions of renters and property owners every day.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        <motion.div 
+          variants={staggerContainer(0.1, 0.2)}
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
+        >
           {partners.map((partner, index) => {
             const Icon = partner.icon;
             return (
-              <div
+              <motion.div
                 key={index}
-                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 animate-fade-in"
-                style={{ animationDelay: `${index * 0.15}s` }}
+                variants={cardVariants}
+                whileHover={{ y: -10, scale: 1.05 }}
+                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-6 flex flex-col items-center justify-center shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
               >
-                <div className="bg-primary/10 text-primary p-3 rounded-full mb-3">
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="bg-primary/10 text-primary p-3 rounded-full mb-3"
+                >
                   <Icon className="w-6 h-6" />
-                </div>
+                </motion.div>
                 <span className="text-sm font-medium text-center text-foreground">
                   {partner.name}
                 </span>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

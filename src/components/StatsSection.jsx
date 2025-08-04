@@ -1,4 +1,6 @@
 import statsIllustration from "./assets/illus 1.svg";
+import { motion } from "framer-motion";
+import { staggerContainer, cardVariants, textVariant, fadeInUp, floatingAnimation, pulseAnimation } from "../animations";
 
 const stats = [
   {
@@ -75,7 +77,13 @@ const stats = [
 
 const StatsSection = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="py-32 relative overflow-hidden"
+    >
       {/* Hero background with family illustration */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-background to-accent/5">
         <div className="absolute inset-0 flex items-center justify-center opacity-5">
@@ -117,12 +125,16 @@ const StatsSection = () => {
         </div>
 
         {/* Enhanced Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20">
+        <motion.div 
+          variants={staggerContainer(0.1, 0.2)}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20"
+        >
           {stats.map((stat, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group animate-fade-in"
-              style={{ animationDelay: `${index * 0.15}s` }}
+              variants={cardVariants}
+              whileHover={{ y: -10, scale: 1.05 }}
+              className="group"
             >
               <div className="relative p-10 rounded-3xl   border border-border/50 bg-white  transition-all duration-500 shadow-lg hover:shadow-xl ">
                 {/* Enhanced Icon */}
@@ -157,9 +169,9 @@ const StatsSection = () => {
                 {/* Gradient border effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Enhanced Bottom CTA */}
         <div
@@ -188,7 +200,7 @@ const StatsSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

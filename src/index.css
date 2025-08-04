@@ -26,6 +26,10 @@
     --primary: #f5f7fa;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-[color:var(--cream)] text-[color:var(--warm-gray)];
   }

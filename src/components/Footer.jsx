@@ -1,20 +1,37 @@
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { staggerContainer, fadeInUp, fadeInLeft, fadeInRight } from "../animations";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#4D3E33] text-white">
+    <motion.footer 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-[#4D3E33] text-white"
+    >
       <div className="container mx-auto px-6 py-16 lg:px-8">
         {/* Main footer content grid */}
-        <div className="grid grid-cols-1 gap-12 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4 mb-12">
+        <motion.div 
+          variants={staggerContainer(0.1, 0.2)}
+          className="grid grid-cols-1 gap-12 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4 mb-12"
+        >
           {/* Column 1: Brand Info & Social Links */}
-          <div className="space-y-6">
+          <motion.div 
+            variants={fadeInLeft(0.2)}
+            className="space-y-6"
+          >
             <h3 className="text-2xl font-bold">XYZ ESTATE Hub </h3>
             <p className="max-w-md text-gray-300 leading-relaxed mx-auto sm:mx-0">
               Making rental housing accessible and stress-free for the next
               generation.
             </p>
             {/* Social Media Icons */}
-            <div className="flex items-center justify-center sm:justify-start gap-4">
+            <motion.div 
+              variants={fadeInUp(0.3)}
+              className="flex items-center justify-center sm:justify-start gap-4"
+            >
               <a
                 href="#"
                 aria-label="Facebook"
@@ -43,11 +60,14 @@ const Footer = () => {
               >
                 <Linkedin className="h-5 w-5" />
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Column 2: Quick Links */}
-          <div className="space-y-4">
+          <motion.div 
+            variants={fadeInUp(0.4)}
+            className="space-y-4"
+          >
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-3 text-gray-300">
               <li>
@@ -91,10 +111,13 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Column 3: Support */}
-          <div className="space-y-4">
+          <motion.div 
+            variants={fadeInUp(0.6)}
+            className="space-y-4"
+          >
             <h4 className="text-lg font-semibold">Support</h4>
             <ul className="space-y-3 text-gray-300">
               <li>
@@ -130,10 +153,13 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Column 4: Newsletter Subscription */}
-          <div className="space-y-4">
+          <motion.div 
+            variants={fadeInRight(0.8)}
+            className="space-y-4"
+          >
             <h4 className="text-lg font-semibold">Stay Updated</h4>
             <p className="text-gray-300">
               Get the latest news and rental deals sent to your inbox.
@@ -152,17 +178,20 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Bottom Bar with Copyright */}
-        <div className="border-t border-white/20 pt-8 text-center">
+        <motion.div 
+          variants={fadeInUp(1.0)}
+          className="border-t border-white/20 pt-8 text-center"
+        >
           <p className="text-sm text-gray-300">
             © 2025 XYZ ESTATE Hub. All Rights Reserved.
           </p>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

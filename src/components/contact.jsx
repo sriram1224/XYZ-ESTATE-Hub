@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { staggerContainer, textVariant, fadeInUp, scaleIn } from "../animations";
 
 /**
  * A Call-To-Action (CTA) section designed to match the provided image.
@@ -10,12 +12,21 @@ const CTASection = () => {
 
   return (
     // Section container with a light, warm off-white background.
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#eff4f6] via-[#e8f6fd] to-[#fbf1e3] py-20 lg:py-24">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="relative overflow-hidden bg-gradient-to-br from-[#eff4f6] via-[#e8f6fd] to-[#fbf1e3] py-20 lg:py-24"
+    >
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjMTJCOTgxIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjxwYXRoIGQ9Ik02MCA2MEwzMCAzMHY2MGg2MFYzMEw2MCA2MHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
       <div className="container relative mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           {/* Introductory content block with a fade-in animation */}
-          <div className="mb-10 animate-fade-in">
+          <motion.div 
+            variants={textVariant(0.2)}
+            className="mb-10"
+          >
             {/* "Join our community" badge with orange accents */}
             <div className="mb-6 inline-flex items-center gap-2.5 rounded-full bg-grey-100 border border-[#F18C5A] px-4 py-1.5 text-sm font-semibold text-[#F18C5A]">
               <span className="h-2 w-2 rounded-full bg-[#F18C5A]"></span>
@@ -35,12 +46,12 @@ const CTASection = () => {
               Get early access to new listings and exclusive rental deals. Join
               thousands of satisfied tenants.
             </p>
-          </div>
+          </motion.div>
 
           {/* Email subscription form */}
-          <div
-            className="mb-8 animate-fade-in"
-            style={{ animationDelay: "0.3s" }}
+          <motion.div
+            variants={fadeInUp(0.4)}
+            className="mb-8"
           >
             <form className="mx-auto flex max-w-md flex-col gap-4 sm:flex-row">
               <input
@@ -58,12 +69,12 @@ const CTASection = () => {
                 Subscribe
               </button>
             </form>
-          </div>
+          </motion.div>
 
           {/* Action buttons */}
-          <div
-            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center animate-fade-in"
-            style={{ animationDelay: "0.6s" }}
+          <motion.div
+            variants={fadeInUp(0.6)}
+            className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
             <button className="h-12 w-full transform rounded-lg bg-[#F18C5A] px-8 font-semibold text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto">
               Browse Listings
@@ -71,12 +82,12 @@ const CTASection = () => {
             <button className="h-12 w-full transform rounded-lg border border-[#F18C5A] bg-white px-8 font-semibold text-orange-500 shadow-sm transition-all duration-300 hover:bg-orange-50 hover:shadow-md active:scale-95 sm:w-auto">
               Talk to Us
             </button>
-          </div>
+          </motion.div>
 
           {/* Trust indicators */}
-          <div
-            className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-gray-500 animate-fade-in"
-            style={{ animationDelay: "0.9s" }}
+          <motion.div
+            variants={fadeInUp(0.8)}
+            className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-gray-500"
           >
             <div className="flex items-center gap-2">
               <svg
@@ -102,21 +113,26 @@ const CTASection = () => {
               </svg>
               <span>Your data is secure with us</span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Soft, floating decorative elements to match the image's aesthetic */}
-      <div className="absolute top-20 left-20 w-16 h-16 bg-primary/20 rounded-full animate-pulse"></div>
-      <div
+      <motion.div 
+        variants={fadeInUp(1.0)}
+        className="absolute top-20 left-20 w-16 h-16 bg-primary/20 rounded-full animate-pulse"
+      ></motion.div>
+      <motion.div
+        variants={fadeInUp(1.2)}
         className="absolute bottom-20 right-20 w-24 h-24 bg-accent/20 rounded-full animate-pulse"
         style={{ animationDelay: "1.5s" }}
-      ></div>
-      <div
+      ></motion.div>
+      <motion.div
+        variants={fadeInUp(1.4)}
         className="absolute top-1/2 right-1/4 w-12 h-12 bg-warm-orange/20 rounded-full animate-pulse"
         style={{ animationDelay: "3s" }}
-      ></div>
-    </section>
+      ></motion.div>
+    </motion.section>
   );
 };
 

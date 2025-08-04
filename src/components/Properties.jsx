@@ -1,18 +1,37 @@
 import properties from "../data/properties";
+import { motion } from "framer-motion";
+import { staggerContainer, cardVariants, textVariant, fadeInUp, scaleIn } from "../animations";
 const Properties = () => {
   return (
-    <div className="bg-[#FCFAF8] p-2 md:p-10">
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-[#FCFAF8] p-2 md:p-10"
+    >
       <div className="container mx-auto px-6 lg:px-8">
-        <h1 className="text-3xl lg:text-4xl font-bold text-center text-[#4D3E33] mb-8">
+        <motion.h1 
+          variants={textVariant(0.2)}
+          className="text-3xl lg:text-4xl font-bold text-center text-[#4D3E33] mb-8"
+        >
           Featured Properties
-        </h1>
-        <p className="text-center text-xl text-[#7a6f66] mb-6">
+        </motion.h1>
+        <motion.p 
+          variants={fadeInUp(0.4)}
+          className="text-center text-xl text-[#7a6f66] mb-6"
+        >
           Handpicked apartments available for immediate booking
-        </p>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:p-4 md:m-10 mb-5 ">
+        </motion.p>
+        <motion.div 
+          variants={staggerContainer(0.1, 0.2)}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:p-4 md:m-10 mb-5 "
+        >
           {properties.map((property) => (
-            <div
+            <motion.div
               key={property.id}
+              variants={cardVariants}
+              whileHover={{ y: -10, scale: 1.02 }}
               className="rounded-3xl group bg-white shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:-translate-y-2 overflow-hidden"
             >
               <div className="relative">
@@ -78,17 +97,19 @@ const Properties = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-        <button
+        </motion.div>
+        <motion.button
+          variants={fadeInUp(0.6)}
+          whileHover={{ scale: 1.05, y: -2 }}
           className=" group-hover:bg-primary-glow  duration-300  border border-[#F18C5A] items-center justify-center rounded-lg px-20 py-2 bg-[#ffffff] text-lg font-semibold text-[#F18C5A]
         hover:bg-[#F18C5A] hover:text-white hover:border-[#F18C5A] hover:-translate-y-0.5"
         >
           View More
-        </button>
+        </motion.button>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

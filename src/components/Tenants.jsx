@@ -1,5 +1,7 @@
 import image2 from "./assets/tenenats 3.jpg";
 import React from "react";
+import { motion } from "framer-motion";
+import { staggerContainer, cardVariants, textVariant, fadeInUp } from "../animations";
 const testimonials = [
   {
     name: "Sarah Johnson",
@@ -31,23 +33,36 @@ const testimonials = [
 
 const EnhancedTestimonialsSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/10 overflow-hidden">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/10 overflow-hidden"
+    >
       <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div 
+          variants={textVariant(0.2)}
+          className="text-center mb-16"
+        >
           <h2 className="text-4xl font-bold mb-4 text-foreground">
             What Our Tenants Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Real stories from real people who found their perfect home with us.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <motion.div 
+          variants={staggerContainer(0.1, 0.2)}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
               key={index}
-              className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 animate-fade-in"
-              style={{ animationDelay: `${index * 0.2}s` }}
+              variants={cardVariants}
+              whileHover={{ y: -10, rotate: 1, scale: 1.02 }}
+              className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1"
             >
               <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-serif">
                 &ldquo;
@@ -103,11 +118,11 @@ const EnhancedTestimonialsSection = () => {
               </div>
 
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full -mr-16 -mt-16 -z-10"></div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

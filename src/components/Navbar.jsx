@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { LogIn, UserPlus } from "lucide-react";
+import { motion } from "framer-motion";
+import { navVariants, fadeInLeft, fadeInRight } from "../animations";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
@@ -25,7 +27,10 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   return (
-    <nav
+    <motion.nav
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
       className={`fixed top-0 w-full z-50 bg-background/80  backdrop-blur-xl border-b border-b-[#ffd9a3] border-border/50  transition-transform duration-500 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
@@ -33,17 +38,23 @@ const Navbar = () => {
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Professional Text Logo */}
-          <div className="flex items-center">
+          <motion.div 
+            variants={fadeInLeft(0.2)}
+            className="flex items-center"
+          >
             <div className="text-4xl font-bold">
               <span className="bg-gradient-to-r from-[#f28d34] to-[#9d8777] bg-clip-text text-transparent">
                 XYZ ESTATE
               </span>
               <span className="text-foreground font-medium"> Hub</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Login/Signup Buttons */}
-          <div className="flex items-center gap-3">
+          <motion.div 
+            variants={fadeInRight(0.4)}
+            className="flex items-center gap-3"
+          >
             {/* Login Button */}
             <button
               variant="ghost"
@@ -69,10 +80,10 @@ const Navbar = () => {
                 </span>
               </div>
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -2,6 +2,8 @@ import image1 from "./assets/1.jpg";
 import image2 from "./assets/2.png";
 import image3 from "./assets/3.jpg";
 import React from "react";
+import { motion } from "framer-motion";
+import { staggerContainer, cardVariants, textVariant, fadeInUp, scaleIn } from "../animations";
 
 const LuxuryPropertiesSection = () => {
   const badges = [
@@ -26,10 +28,19 @@ const LuxuryPropertiesSection = () => {
     },
   ];
   return (
-    <section className="py-20 bg-gradient-to-br from-background to-muted relative overflow-hidden">
+    <motion.section 
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      className="py-20 bg-gradient-to-br from-background to-muted relative overflow-hidden"
+    >
       <div className="container mx-auto px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <motion.div 
+          variants={textVariant(0.2)}
+          className="text-center mb-16"
+        >
           <span className="inline-block mb-4 px-4 py-1 bg-primary/10 text-primary border border-primary/20 text-sm font-medium rounded-full">
             Premium Collection
           </span>
@@ -41,9 +52,12 @@ const LuxuryPropertiesSection = () => {
             unparalleled comfort. Each property is carefully curated for the
             most discerning tenants.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-8 max-w-7xl mx-auto">
+        <motion.div 
+          variants={staggerContainer(0.1, 0.2)}
+          className="grid gap-8 max-w-7xl mx-auto"
+        >
           <div className="relative h-[600px] lg:h-[700px] rounded-3xl overflow-hidden shadow-xl group animate-fade-in">
             <img
               src={image1}
@@ -207,9 +221,9 @@ const LuxuryPropertiesSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

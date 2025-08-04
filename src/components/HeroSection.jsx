@@ -1,11 +1,18 @@
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer, zoomIn } from "../animations";
 import heroImage from "./assets/hero-tenants.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative p-2  md:p-10 md:pt-16 overflow-hidden bg-gradient-to-br from-cream to-soft-blue min-h-screen  flex items-center">
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      animate="visible"
+      className="relative p-2 md:p-10 md:pt-16 overflow-hidden bg-gradient-to-br from-cream to-soft-blue min-h-screen flex items-center"
+    >
       <div className="container mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          <motion.div variants={fadeIn} className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl text-start lg:text-6xl font-bold leading-tight text-[#4D3E33]">
                 Find Your
@@ -53,9 +60,9 @@ const HeroSection = () => {
                 <span>Verified Listings</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative">
+          <motion.div variants={zoomIn(0.4, 1)} className="relative">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src={heroImage}
@@ -74,10 +81,10 @@ const HeroSection = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
