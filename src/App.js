@@ -12,8 +12,8 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App min-h-screen mx-auto">
-      <div>
+    <div className="App min-h-screen mx-auto overflow-x-hidden">
+      <div className="w-full">
         <Navbar />
         <div className=""></div>
         <HeroSection />

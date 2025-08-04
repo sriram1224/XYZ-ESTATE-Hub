@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { LogIn, UserPlus } from "lucide-react";
+import { LogIn, UserPlus, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { navVariants, fadeInLeft, fadeInRight } from "../animations";
 
 const Navbar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,14 +36,13 @@ const Navbar = () => {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Professional Text Logo */}
           <motion.div 
             variants={fadeInLeft(0.2)}
             className="flex items-center"
           >
-            <div className="text-4xl font-bold">
+            <div className="text-2xl sm:text-3xl lg:text-4xl font-bold">
               <span className="bg-gradient-to-r from-[#f28d34] to-[#9d8777] bg-clip-text text-transparent">
                 XYZ ESTATE
               </span>
@@ -50,12 +50,10 @@ const Navbar = () => {
             </div>
           </motion.div>
 
-          {/* Login/Signup Buttons */}
           <motion.div 
             variants={fadeInRight(0.4)}
-            className="flex items-center gap-3"
+            className="hidden md:flex items-center gap-3"
           >
-            {/* Login Button */}
             <button
               variant="ghost"
               className="group relative overflow-hidden h-10 px-3 hover:px-6 min-w-[40px] hover:min-w-[80px] bg-transparent border border-[#3d51ff]  transition-all duration-500 ease-out rounded-xl"
@@ -68,7 +66,6 @@ const Navbar = () => {
               </div>
             </button>
 
-            {/* Signup Button */}
             <button
               variant="outline"
               className="group relative overflow-hidden h-10 px-3 hover:px-6 min-w-[40px] hover:min-w-[90px] border border-[#ff782a]  hover:text-primary-foreground transition-all duration-500 ease-out rounded-xl shadow-sm hover:shadow-lg"
@@ -81,7 +78,40 @@ const Navbar = () => {
               </div>
             </button>
           </motion.div>
+
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-gray-700" />
+              ) : (
+                <Menu className="w-6 h-6 text-gray-700" />
+              )}
+            </button>
+          </div>
         </div>
+
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden bg-white border-t border-gray-200 py-4"
+          >
+            <div className="flex flex-col gap-3 px-4">
+              <button className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-transparent border border-[#3d51ff] text-[#3d51ff] rounded-lg font-medium">
+                <LogIn className="w-4 h-4" />
+                Login
+              </button>
+              <button className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-[#ff782a] text-white rounded-lg font-medium">
+                <UserPlus className="w-4 h-4" />
+                Sign Up
+              </button>
+            </div>
+          </motion.div>
+        )}
       </div>
     </motion.nav>
   );

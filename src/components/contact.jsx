@@ -2,16 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { staggerContainer, textVariant, fadeInUp, scaleIn } from "../animations";
 
-/**
- * A Call-To-Action (CTA) section designed to match the provided image.
- * It features a clean, light background with warm orange accents for buttons and highlights.
- * The layout encourages user interaction through an email subscription form and action buttons.
- */
 const CTASection = () => {
   const [email, setEmail] = useState("");
 
   return (
-    // Section container with a light, warm off-white background.
     <motion.section 
       variants={staggerContainer}
       initial="hidden"
@@ -22,18 +16,15 @@ const CTASection = () => {
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjMTJCOTgxIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjxwYXRoIGQ9Ik02MCA2MEwzMCAzMHY2MGg2MFYzMEw2MCA2MHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
       <div className="container relative mx-auto px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Introductory content block with a fade-in animation */}
           <motion.div 
             variants={textVariant(0.2)}
             className="mb-10"
           >
-            {/* "Join our community" badge with orange accents */}
             <div className="mb-6 inline-flex items-center gap-2.5 rounded-full bg-grey-100 border border-[#F18C5A] px-4 py-1.5 text-sm font-semibold text-[#F18C5A]">
               <span className="h-2 w-2 rounded-full bg-[#F18C5A]"></span>
               Join our community
             </div>
 
-            {/* Main Headline with a highlighted part */}
             <h2 className="mb-4 text-4xl font-bold text-gray-800 lg:text-5xl">
               Ready to Find Your{" "}
               <span className="bg-gradient-to-r from-[#f2994a] to-primary-glow bg-clip-text text-transparent">
@@ -41,14 +32,12 @@ const CTASection = () => {
               </span>
             </h2>
 
-            {/* Supporting paragraph with muted text */}
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-gray-500 md:text-xl">
+            <p className="mx-auto max-w-2xl text-base sm:text-lg leading-relaxed text-gray-500 md:text-xl">
               Get early access to new listings and exclusive rental deals. Join
               thousands of satisfied tenants.
             </p>
           </motion.div>
 
-          {/* Email subscription form */}
           <motion.div
             variants={fadeInUp(0.4)}
             className="mb-8"
@@ -59,35 +48,33 @@ const CTASection = () => {
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-12 flex-1 rounded-lg border border-gray-300 bg-white px-5 text-base text-gray-800 placeholder-gray-400 transition-shadow duration-300 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
+                className="h-11 sm:h-12 flex-1 rounded-lg border border-gray-300 bg-white px-4 sm:px-5 text-sm sm:text-base text-gray-800 placeholder-gray-400 transition-shadow duration-300 focus:border-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-200"
                 required
               />
               <button
                 type="submit"
-                className="h-12 transform rounded-lg bg-[#F18C5A] px-8 font-semibold text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95"
+                className="h-11 sm:h-12 transform rounded-lg bg-[#F18C5A] px-6 sm:px-8 font-semibold text-sm sm:text-base text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95"
               >
                 Subscribe
               </button>
             </form>
           </motion.div>
 
-          {/* Action buttons */}
           <motion.div
             variants={fadeInUp(0.6)}
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
-            <button className="h-12 w-full transform rounded-lg bg-[#F18C5A] px-8 font-semibold text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto">
+            <button className="h-11 sm:h-12 w-full transform rounded-lg bg-[#F18C5A] px-6 sm:px-8 font-semibold text-sm sm:text-base text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto">
               Browse Listings
             </button>
-            <button className="h-12 w-full transform rounded-lg border border-[#F18C5A] bg-white px-8 font-semibold text-orange-500 shadow-sm transition-all duration-300 hover:bg-orange-50 hover:shadow-md active:scale-95 sm:w-auto">
+            <button className="h-11 sm:h-12 w-full transform rounded-lg border border-[#F18C5A] bg-white px-6 sm:px-8 font-semibold text-sm sm:text-base text-orange-500 shadow-sm transition-all duration-300 hover:bg-orange-50 hover:shadow-md active:scale-95 sm:w-auto">
               Talk to Us
             </button>
           </motion.div>
 
-          {/* Trust indicators */}
           <motion.div
             variants={fadeInUp(0.8)}
-            className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-gray-500"
+            className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-x-4 sm:gap-x-8 gap-y-4 text-xs sm:text-sm text-gray-500"
           >
             <div className="flex items-center gap-2">
               <svg
@@ -117,19 +104,18 @@ const CTASection = () => {
         </div>
       </div>
 
-      {/* Soft, floating decorative elements to match the image's aesthetic */}
       <motion.div 
         variants={fadeInUp(1.0)}
-        className="absolute top-20 left-20 w-16 h-16 bg-primary/20 rounded-full animate-pulse"
+        className="absolute top-20 left-4 sm:left-20 w-8 h-8 sm:w-16 sm:h-16 bg-primary/20 rounded-full animate-pulse"
       ></motion.div>
       <motion.div
         variants={fadeInUp(1.2)}
-        className="absolute bottom-20 right-20 w-24 h-24 bg-accent/20 rounded-full animate-pulse"
+        className="absolute bottom-20 right-4 sm:right-20 w-12 h-12 sm:w-24 sm:h-24 bg-accent/20 rounded-full animate-pulse"
         style={{ animationDelay: "1.5s" }}
       ></motion.div>
       <motion.div
         variants={fadeInUp(1.4)}
-        className="absolute top-1/2 right-1/4 w-12 h-12 bg-warm-orange/20 rounded-full animate-pulse"
+        className="absolute top-1/2 right-4 sm:right-1/4 w-6 h-6 sm:w-12 sm:h-12 bg-warm-orange/20 rounded-full animate-pulse"
         style={{ animationDelay: "3s" }}
       ></motion.div>
     </motion.section>

@@ -84,7 +84,6 @@ const StatsSection = () => {
       viewport={{ once: true, amount: 0.3 }}
       className="py-32 relative overflow-hidden"
     >
-      {/* Hero background with family illustration */}
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-background to-accent/5">
         <div className="absolute inset-0 flex items-center justify-center opacity-5">
           <img
@@ -96,15 +95,13 @@ const StatsSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/60 to-background/90"></div>
       </div>
 
-      {/* Subtle floating decorations */}
-      <div className="absolute top-20 left-20 w-16 h-16 bg-primary/5 rounded-full blur-sm"></div>
-      <div className="absolute bottom-20 right-20 w-12 h-12 bg-accent/5 rounded-full blur-sm"></div>
-      <div className="absolute top-1/3 right-1/4 w-10 h-10 bg-secondary/5 rounded-full blur-sm"></div>
-      <div className="absolute bottom-1/3 left-1/4 w-8 h-8 bg-primary/5 rounded-full blur-sm"></div>
+      <div className="absolute top-20 left-4 sm:left-20 w-8 h-8 sm:w-16 sm:h-16 bg-primary/5 rounded-full blur-sm"></div>
+      <div className="absolute bottom-20 right-4 sm:right-20 w-6 h-6 sm:w-12 sm:h-12 bg-accent/5 rounded-full blur-sm"></div>
+      <div className="absolute top-1/3 right-4 sm:right-1/4 w-5 h-5 sm:w-10 sm:h-10 bg-secondary/5 rounded-full blur-sm"></div>
+      <div className="absolute bottom-1/3 left-4 sm:left-1/4 w-4 h-4 sm:w-8 sm:h-8 bg-primary/5 rounded-full blur-sm"></div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative">
-        {/* Enhanced Section Header */}
-        <div className="text-center mb-20 animate-fade-in">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path
@@ -115,19 +112,18 @@ const StatsSection = () => {
             </svg>
             Platform Excellence
           </div>
-          <h2 className="text-5xl lg:text-7xl font-bold text-foreground mb-6 bg-gradient-to-r from-foreground via-white to-foreground bg-clip-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 bg-gradient-to-r from-foreground via-white to-foreground bg-clip-text">
             Proven Results
           </h2>
-          <p className="text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Numbers that speak for themselves — join a community that's
             revolutionizing the rental experience.
           </p>
         </div>
 
-        {/* Enhanced Stats Grid */}
         <motion.div 
           variants={staggerContainer(0.1, 0.2)}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto mb-12 sm:mb-16 lg:mb-20"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -136,63 +132,56 @@ const StatsSection = () => {
               whileHover={{ y: -10, scale: 1.05 }}
               className="group"
             >
-              <div className="relative p-10 rounded-3xl   border border-border/50 bg-white  transition-all duration-500 shadow-lg hover:shadow-xl ">
-                {/* Enhanced Icon */}
-                <div className="text-primary mb-8 group-hover:text-primary transition-all duration-500 group-hover:scale-125 transform flex justify-center">
+              <div className="relative p-6 sm:p-8 lg:p-10 rounded-3xl border border-border/50 bg-white transition-all duration-500 shadow-lg hover:shadow-xl">
+                <div className="text-primary mb-4 sm:mb-6 lg:mb-8 group-hover:text-primary transition-all duration-500 group-hover:scale-125 transform flex justify-center">
                   {stat.icon}
                 </div>
 
-                {/* Enhanced Number with counter effect */}
-                <div className="text-5xl lg:text-6xl font-black text-foreground mb-4 group-hover:scale-110 transition-transform duration-500 text-center">
+                <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-500 text-center">
                   <span className="text-primary group-hover:text-primary/90">
                     {stat.number}
                   </span>
                   {stat.label === "Average Rating" && (
-                    <span className="text-3xl text-yellow-500">★</span>
+                    <span className="text-xl sm:text-2xl lg:text-3xl text-yellow-500">★</span>
                   )}
                 </div>
 
-                {/* Enhanced Label */}
-                <div className="text-xl font-bold text-foreground mb-3 text-center group-hover:text-primary transition-colors duration-300">
+                <div className="text-lg sm:text-xl font-bold text-foreground mb-2 sm:mb-3 text-center group-hover:text-primary transition-colors duration-300">
                   {stat.label}
                 </div>
 
-                {/* Enhanced Description */}
-                <div className="text-muted-foreground text-center leading-relaxed">
+                <div className="text-sm sm:text-base text-muted-foreground text-center leading-relaxed">
                   {stat.description}
                 </div>
 
-                {/* Subtle decorative elements */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-primary to-accent rounded-full opacity-0 group-hover:opacity-60 transition-all duration-500"></div>
                 <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-gradient-to-r from-accent to-primary rounded-full opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
 
-                {/* Gradient border effect */}
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl"></div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Enhanced Bottom CTA */}
         <div
           className="text-center animate-fade-in"
           style={{ animationDelay: "0.8s" }}
         >
-          <div className="max-w-4xl mx-auto p-12 rounded-3xl border border-primary/20  backdrop-blur-md ">
-            <p className="text-2xl text-muted-foreground mb-8 leading-relaxed">
+          <div className="max-w-4xl mx-auto p-6 sm:p-8 lg:p-12 rounded-3xl border border-primary/20 backdrop-blur-md">
+            <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
               Ready to become part of our success story?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 size="lg"
-                className="px-12 py-4 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-primary to-primary/90 text-accent/90 text-white"
+                className="px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-primary to-primary/90 text-accent/90 text-white"
               >
                 Join the Community
               </button>
               <button
                 variant="outline"
                 size="lg"
-                className="px-12 py-4 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 bg-white"
+                className="px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 bg-white"
               >
                 View Success Stories
               </button>

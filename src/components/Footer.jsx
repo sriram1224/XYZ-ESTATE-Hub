@@ -11,23 +11,20 @@ const Footer = () => {
       viewport={{ once: true, amount: 0.3 }}
       className="bg-[#4D3E33] text-white"
     >
-      <div className="container mx-auto px-6 py-16 lg:px-8">
-        {/* Main footer content grid */}
+      <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:px-8">
         <motion.div 
           variants={staggerContainer(0.1, 0.2)}
-          className="grid grid-cols-1 gap-12 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4 mb-12"
+          className="grid grid-cols-1 gap-8 sm:gap-12 text-center sm:text-left md:grid-cols-2 lg:grid-cols-4 mb-8 sm:mb-12"
         >
-          {/* Column 1: Brand Info & Social Links */}
           <motion.div 
             variants={fadeInLeft(0.2)}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold">XYZ ESTATE Hub </h3>
-            <p className="max-w-md text-gray-300 leading-relaxed mx-auto sm:mx-0">
+            <h3 className="text-xl sm:text-2xl font-bold">XYZ ESTATE Hub </h3>
+            <p className="max-w-md text-sm sm:text-base text-gray-300 leading-relaxed mx-auto sm:mx-0">
               Making rental housing accessible and stress-free for the next
               generation.
             </p>
-            {/* Social Media Icons */}
             <motion.div 
               variants={fadeInUp(0.3)}
               className="flex items-center justify-center sm:justify-start gap-4"
@@ -63,13 +60,12 @@ const Footer = () => {
             </motion.div>
           </motion.div>
 
-          {/* Column 2: Quick Links */}
           <motion.div 
             variants={fadeInUp(0.4)}
             className="space-y-4"
           >
-            <h4 className="text-lg font-semibold">Quick Links</h4>
-            <ul className="space-y-3 text-gray-300">
+            <h4 className="text-base sm:text-lg font-semibold">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
               <li>
                 <a
                   href="#"
@@ -113,13 +109,12 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Column 3: Support */}
           <motion.div 
             variants={fadeInUp(0.6)}
             className="space-y-4"
           >
-            <h4 className="text-lg font-semibold">Support</h4>
-            <ul className="space-y-3 text-gray-300">
+            <h4 className="text-base sm:text-lg font-semibold">Support</h4>
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base text-gray-300">
               <li>
                 <a
                   href="#"
@@ -155,25 +150,24 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Column 4: Newsletter Subscription */}
           <motion.div 
             variants={fadeInRight(0.8)}
             className="space-y-4"
           >
-            <h4 className="text-lg font-semibold">Stay Updated</h4>
-            <p className="text-gray-300">
+            <h4 className="text-base sm:text-lg font-semibold">Stay Updated</h4>
+            <p className="text-sm sm:text-base text-gray-300">
               Get the latest news and rental deals sent to your inbox.
             </p>
-            <form className="flex w-full max-w-md mx-auto sm:mx-0">
+            <form className="flex w-full max-w-md mx-auto sm:mx-0 overflow-hidden">
               <input
                 type="email"
                 placeholder="Enter your email"
                 aria-label="Email for newsletter"
-                className="h-11 flex-grow rounded-l-md border border-r-0 border-white/30 bg-white/10 px-4 text-white placeholder-gray-400 transition-all focus:border-white/50 focus:bg-white/20 focus:outline-none"
+                className="h-10 sm:h-11 flex-grow rounded-l-md border border-r-0 border-white/30 bg-white/10 px-3 sm:px-4 text-sm sm:text-base text-white placeholder-gray-400 transition-all focus:border-white/50 focus:bg-white/20 focus:outline-none"
               />
               <button
                 type="submit"
-                className="h-11 shrink-0 rounded-r-md bg-[#F18C5A] px-5 font-semibold text-white transition-all duration-300 hover:bg-[#E87E4C] active:scale-95"
+                className="h-10 sm:h-11 shrink-0 rounded-r-md bg-[#F18C5A] px-3 sm:px-5 text-sm sm:text-base font-semibold text-white transition-all duration-300 hover:bg-[#E87E4C] active:scale-95"
               >
                 Subscribe
               </button>
@@ -181,10 +175,9 @@ const Footer = () => {
           </motion.div>
         </motion.div>
 
-        {/* Bottom Bar with Copyright */}
         <motion.div 
           variants={fadeInUp(1.0)}
-          className="border-t border-white/20 pt-8 text-center"
+          className="border-t border-white/20 pt-6 sm:pt-8 text-center"
         >
           <p className="text-sm text-gray-300">
             © 2025 XYZ ESTATE Hub. All Rights Reserved.

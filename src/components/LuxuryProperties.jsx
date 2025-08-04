@@ -35,8 +35,7 @@ const LuxuryPropertiesSection = () => {
       viewport={{ once: true, amount: 0.3 }}
       className="py-20 bg-gradient-to-br from-background to-muted relative overflow-hidden"
     >
-      <div className="container mx-auto px-6 lg:px-8">
-        {/* Section Header */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           variants={textVariant(0.2)}
           className="text-center mb-16"
@@ -58,7 +57,7 @@ const LuxuryPropertiesSection = () => {
           variants={staggerContainer(0.1, 0.2)}
           className="grid gap-8 max-w-7xl mx-auto"
         >
-          <div className="relative h-[600px] lg:h-[700px] rounded-3xl overflow-hidden shadow-xl group animate-fade-in">
+          <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] rounded-3xl overflow-hidden shadow-xl group animate-fade-in">
             <img
               src={image1}
               alt="Luxury Modern Villa with Pool"
@@ -67,26 +66,26 @@ const LuxuryPropertiesSection = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/30" />
 
-            <span className="absolute top-8 left-8 bg-primary text-white px-4 py-2 text-sm font-semibold rounded-full shadow">
+            <span className="absolute top-4 left-4 sm:top-8 sm:left-8 bg-primary text-white px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-semibold rounded-full shadow">
               ✨ Ultra Luxury
             </span>
 
-            <div className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-2xl px-6 py-3 shadow-lg">
-              <div className="text-2xl font-bold text-primary">$12,500</div>
-              <div className="text-sm text-warm-gray">per month</div>
+            <div className="absolute top-4 right-4 sm:top-8 sm:right-8 bg-white/90 backdrop-blur-sm rounded-2xl px-4 sm:px-6 py-2 sm:py-3 shadow-lg">
+              <div className="text-lg sm:text-xl lg:text-2xl font-bold text-primary">$12,500</div>
+              <div className="text-xs sm:text-sm text-warm-gray">per month</div>
             </div>
 
-            <div className="absolute bottom-0 left-0 right-0 p-8 lg:p-12 text-start">
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 lg:p-8 xl:p-12 text-start">
               <div className="max-w-4xl">
-                <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-4">
                   Modern Architectural Masterpiece
                 </h3>
-                <p className="text-lg text-gray-200 mb-6 max-w-2xl">
+                <p className="text-sm sm:text-base lg:text-lg text-gray-200 mb-4 sm:mb-6 max-w-2xl">
                   A stunning contemporary villa featuring floor-to-ceiling
                   windows, infinity pool, and panoramic views.
                 </p>
 
-                <div className="flex flex-wrap gap-6 mb-8 text-white">
+                <div className="flex flex-wrap gap-3 sm:gap-6 mb-4 sm:mb-8 text-white">
                   {[
                     "5 Bedrooms",
                     "4 Bathrooms",
@@ -95,16 +94,16 @@ const LuxuryPropertiesSection = () => {
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full" />
-                      <span className="text-sm font-medium">{feature}</span>
+                      <span className="text-xs sm:text-sm font-medium">{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-xl font-semibold text-base">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <button className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
                     Schedule Private Tour
                   </button>
-                  <button className="border border-white text-white hover:bg-white hover:text-foreground px-8 py-3 rounded-xl font-semibold text-base backdrop-blur-sm">
+                  <button className="border border-white text-white hover:bg-white hover:text-foreground px-6 sm:px-8 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base backdrop-blur-sm">
                     View Floor Plans
                   </button>
                 </div>
@@ -113,7 +112,6 @@ const LuxuryPropertiesSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8 animate-fade-in delay-[300ms]">
-            {/* Property 2 */}
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-lg group">
               <img
                 src={image2}
@@ -155,7 +153,6 @@ const LuxuryPropertiesSection = () => {
               </div>
             </div>
 
-            {/* Property 3 */}
             <div className="relative h-[500px] rounded-3xl overflow-hidden shadow-lg group">
               <img
                 src={image3}
@@ -197,7 +194,6 @@ const LuxuryPropertiesSection = () => {
             </div>
           </div>
 
-          {/* Features */}
           <div className="grid md:grid-cols-3 gap-8 mt-16 animate-fade-in delay-[600ms] ">
             {badges.map((feature, idx) => (
               <div
