@@ -26,6 +26,7 @@ const TrustedPartnersSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/10 border-t border-gray-100 overflow-hidden"
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -51,7 +52,7 @@ const TrustedPartnersSection = () => {
                 key={index}
                 variants={cardVariants}
                 whileHover={{ y: -10, scale: 1.05 }}
-                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+                className="group bg-white/95 backdrop-blur-sm rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 active:scale-95"
               >
                 <motion.div 
                   whileHover={{ scale: 1.1, rotate: 5 }}

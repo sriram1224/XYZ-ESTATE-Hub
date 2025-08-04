@@ -12,6 +12,7 @@ const CTASection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="relative overflow-hidden bg-gradient-to-br from-[#eff4f6] via-[#e8f6fd] to-[#fbf1e3] py-20 lg:py-24"
+      style={{ willChange: 'transform' }}
     >
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjMTJCOTgxIiBmaWxsLW9wYWNpdHk9IjAuMDUiPjxwYXRoIGQ9Ik02MCA2MEwzMCAzMHY2MGg2MFYzMEw2MCA2MHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
       <div className="container relative mx-auto px-6 lg:px-8">
@@ -54,6 +55,7 @@ const CTASection = () => {
               <button
                 type="submit"
                 className="h-11 sm:h-12 transform rounded-lg bg-[#F18C5A] px-6 sm:px-8 font-semibold text-sm sm:text-base text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95"
+                style={{ minHeight: '44px' }}
               >
                 Subscribe
               </button>
@@ -64,10 +66,10 @@ const CTASection = () => {
             variants={fadeInUp(0.6)}
             className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           >
-            <button className="h-11 sm:h-12 w-full transform rounded-lg bg-[#F18C5A] px-6 sm:px-8 font-semibold text-sm sm:text-base text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto">
+            <button className="h-11 sm:h-12 w-full transform rounded-lg bg-[#F18C5A] px-6 sm:px-8 font-semibold text-sm sm:text-base text-white shadow-md transition-all duration-300 hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto" style={{ minHeight: '44px' }}>
               Browse Listings
             </button>
-            <button className="h-11 sm:h-12 w-full transform rounded-lg border border-[#F18C5A] bg-white px-6 sm:px-8 font-semibold text-sm sm:text-base text-orange-500 shadow-sm transition-all duration-300 hover:bg-orange-50 hover:shadow-md active:scale-95 sm:w-auto">
+            <button className="h-11 sm:h-12 w-full transform rounded-lg border border-[#F18C5A] bg-white px-6 sm:px-8 font-semibold text-sm sm:text-base text-orange-500 shadow-sm transition-all duration-300 hover:bg-orange-50 hover:shadow-md active:scale-95 sm:w-auto" style={{ minHeight: '44px' }}>
               Talk to Us
             </button>
           </motion.div>

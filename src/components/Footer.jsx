@@ -10,6 +10,7 @@ const Footer = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="bg-[#4D3E33] text-white"
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 lg:px-8">
         <motion.div 
@@ -168,6 +169,7 @@ const Footer = () => {
               <button
                 type="submit"
                 className="h-10 sm:h-11 shrink-0 rounded-r-md bg-[#F18C5A] px-3 sm:px-5 text-sm sm:text-base font-semibold text-white transition-all duration-300 hover:bg-[#E87E4C] active:scale-95"
+                style={{ minHeight: '44px' }}
               >
                 Subscribe
               </button>

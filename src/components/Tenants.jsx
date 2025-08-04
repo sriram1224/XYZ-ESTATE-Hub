@@ -39,6 +39,7 @@ const EnhancedTestimonialsSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="py-20 bg-gradient-to-br from-primary/5 via-background to-accent/10 overflow-hidden"
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -62,7 +63,7 @@ const EnhancedTestimonialsSection = () => {
               key={index}
               variants={cardVariants}
               whileHover={{ y: -10, rotate: 1, scale: 1.02 }}
-              className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1"
+              className="relative bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-card hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:rotate-1 active:scale-95"
             >
               <div className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 w-8 h-8 sm:w-12 sm:h-12 bg-primary text-white rounded-full flex items-center justify-center text-lg sm:text-2xl font-serif">
                 &ldquo;

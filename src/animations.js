@@ -29,6 +29,8 @@ export const staggerContainer = (staggerChildren, delayChildren) => {
       transition: {
         staggerChildren,
         delayChildren,
+        type: "tween",
+        ease: "easeOut",
       },
     },
   };
@@ -111,16 +113,16 @@ export const float = (direction, type, delay, duration) => {
 
 export const navVariants = {
   hidden: {
-    y: -100,
+    y: -50,
     opacity: 0,
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
+      type: "tween",
+      duration: 0.4,
+      ease: "easeOut",
       delay: 0.1,
     },
   },
@@ -128,16 +130,16 @@ export const navVariants = {
 
 export const cardVariants = {
   hidden: {
-    y: 50,
+    y: 30,
     opacity: 0,
   },
   visible: {
     y: 0,
     opacity: 1,
     transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
+      type: "tween",
+      duration: 0.6,
+      ease: "easeOut",
     },
   },
 };

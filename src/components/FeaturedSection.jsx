@@ -10,6 +10,7 @@ const FeaturedSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="bg-[#FCFAF8] p-4 sm:p-6 lg:p-10"
+      style={{ willChange: 'transform' }}
     >
       <motion.h1 
         variants={textVariant(0.2)}
@@ -33,7 +34,7 @@ const FeaturedSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className="flex p-4 sm:p-6 flex-col gap-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:-translate-y-2 group"
+              className="flex p-4 sm:p-6 flex-col gap-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:-translate-y-2 group active:scale-95"
             >
               <motion.div 
                 whileHover={{ scale: 1.1, rotate: 5 }}

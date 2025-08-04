@@ -35,6 +35,7 @@ const Navbar = () => {
       className={`fixed top-0 w-full z-50 bg-background/80  backdrop-blur-xl border-b border-b-[#ffd9a3] border-border/50  transition-transform duration-500 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -83,6 +84,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              style={{ minHeight: '44px', minWidth: '44px' }}
             >
               {isMobileMenuOpen ? (
                 <X className="w-6 h-6 text-gray-700" />
@@ -101,11 +103,11 @@ const Navbar = () => {
             className="md:hidden bg-white border-t border-gray-200 py-4"
           >
             <div className="flex flex-col gap-3 px-4">
-              <button className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-transparent border border-[#3d51ff] text-[#3d51ff] rounded-lg font-medium">
+              <button className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-transparent border border-[#3d51ff] text-[#3d51ff] rounded-lg font-medium" style={{ minHeight: '44px' }}>
                 <LogIn className="w-4 h-4" />
                 Login
               </button>
-              <button className="flex items-center justify-center gap-2 w-full py-2 px-4 bg-[#ff782a] text-white rounded-lg font-medium">
+              <button className="flex items-center justify-center gap-2 w-full py-3 px-4 bg-[#ff782a] text-white rounded-lg font-medium" style={{ minHeight: '44px' }}>
                 <UserPlus className="w-4 h-4" />
                 Sign Up
               </button>

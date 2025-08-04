@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="App min-h-screen mx-auto overflow-x-hidden">
-      <div className="w-full">
+      <div className="w-full" style={{ willChange: 'scroll-position' }}>
         <Navbar />
         <div className=""></div>
         <HeroSection />

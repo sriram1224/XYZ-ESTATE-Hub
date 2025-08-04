@@ -9,6 +9,7 @@ const HeroSection = () => {
       initial="hidden"
       animate="visible"
       className="relative p-4 sm:p-6 md:p-10 md:pt-16 overflow-hidden bg-gradient-to-br from-cream to-soft-blue min-h-screen flex items-center"
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -30,10 +31,10 @@ const HeroSection = () => {
               <button
                 variant="hero"
                 size="lg"
-                className="inline-flex items-center justify-center rounded-md px-6 sm:px-8 py-3 
+                className="inline-flex items-center justify-center rounded-md px-6 sm:px-8 py-4 
   bg-gradient-to-r from-warm-orange to-primary 
   text-base sm:text-lg font-semibold text-white
-  shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5"
+  shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 active:scale-95"
               >
                 Browse Listings
               </button>
@@ -41,10 +42,10 @@ const HeroSection = () => {
                 variant="hero-outline"
                 size="lg"
                 className=" 
-                inline-flex items-center justify-center rounded-md px-6 sm:px-8 py-3 
+                inline-flex items-center justify-center rounded-md px-6 sm:px-8 py-4 
   bg-white
   text-base sm:text-lg font-semibold text-primary border-2 border-warm-orange
-  shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-warm-orange hover:text-white"
+  shadow-lg transition-all hover:shadow-xl hover:-translate-y-0.5 hover:bg-warm-orange hover:text-white active:scale-95"
               >
                 Talk to Us
               </button>

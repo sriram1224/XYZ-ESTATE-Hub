@@ -83,6 +83,7 @@ const StatsSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="py-32 relative overflow-hidden"
+      style={{ willChange: 'transform' }}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-background to-accent/5">
         <div className="absolute inset-0 flex items-center justify-center opacity-5">
@@ -174,14 +175,14 @@ const StatsSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
                 size="lg"
-                className="px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-primary to-primary/90 text-accent/90 text-white"
+                className="px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 bg-gradient-to-r from-primary to-primary/90 text-accent/90 text-white active:scale-95"
               >
                 Join the Community
               </button>
               <button
                 variant="outline"
                 size="lg"
-                className="px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 bg-white"
+                className="px-6 sm:px-8 lg:px-12 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 bg-white active:scale-95"
               >
                 View Success Stories
               </button>

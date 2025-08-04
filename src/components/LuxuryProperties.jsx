@@ -34,6 +34,7 @@ const LuxuryPropertiesSection = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="py-20 bg-gradient-to-br from-background to-muted relative overflow-hidden"
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
@@ -100,10 +101,10 @@ const LuxuryPropertiesSection = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <button className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base">
+                  <button className="bg-primary hover:bg-primary/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base active:scale-95">
                     Schedule Private Tour
                   </button>
-                  <button className="border border-white text-white hover:bg-white hover:text-foreground px-6 sm:px-8 py-2 sm:py-3 rounded-xl font-semibold text-sm sm:text-base backdrop-blur-sm">
+                  <button className="border border-white text-white hover:bg-white hover:text-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base backdrop-blur-sm active:scale-95">
                     View Floor Plans
                   </button>
                 </div>

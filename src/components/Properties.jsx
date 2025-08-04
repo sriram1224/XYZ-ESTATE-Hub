@@ -9,6 +9,7 @@ const Properties = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
       className="bg-[#FCFAF8] p-4 sm:p-6 md:p-10"
+      style={{ willChange: 'transform' }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h1 
@@ -32,7 +33,7 @@ const Properties = () => {
               key={property.id}
               variants={cardVariants}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="rounded-3xl group bg-white shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:-translate-y-2 overflow-hidden"
+              className="rounded-3xl group bg-white shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:-translate-y-2 overflow-hidden active:scale-95"
             >
               <div className="relative">
                 <img
@@ -92,7 +93,7 @@ const Properties = () => {
                   ))}
                 </div>
                 <div>
-                  <button className="w-full group-hover:bg-primary-glow duration-300 items-center justify-center rounded-2xl px-4 py-2 bg-[#F18C5A] text-base sm:text-lg font-semibold text-white hover:-translate-y-0.5">
+                  <button className="w-full group-hover:bg-primary-glow duration-300 items-center justify-center rounded-2xl px-4 py-3 bg-[#F18C5A] text-base sm:text-lg font-semibold text-white hover:-translate-y-0.5 active:scale-95">
                     Book Now
                   </button>
                 </div>
